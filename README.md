@@ -2,7 +2,7 @@
 ========================
 
 #### 1. Giới Thiệu
-- Người dùng thường muốn thực hiện một số cấu hình cho VM của họ sau khi nó khởi động. Ví dụ như, cài đặt một số gói, 
+  Người dùng thường muốn thực hiện một số cấu hình cho VM của họ sau khi nó khởi động. Ví dụ như, cài đặt một số gói, 
 khởi động dịch vụ hoặc quản lí các VM. Khi tạo instances trong 1 hệ thống OpenStack cloud, có hai thuật ngữ làm việc với nhau
 để hỗ trợ việc cấu hình tự động cho các instances tại thời điểm khởi động: user-data và cloud-init.
 
@@ -190,7 +190,7 @@ runcmd:
  - mysqladmin -u root password '123456'
  ```
 ###### 3.7. Sử dụng Cloud-init trong OpenStack
-Sử dụng cloud-init trong các instance của OpenStack trước hết các image đã phải cài đặt sẵn cloud-init. Bạn không cần phải cấu hình thêm gì cả, chỉ cần cài đặt và sử dụng.
+  Sử dụng cloud-init trong các instance của OpenStack trước hết các image đã phải cài đặt sẵn cloud-init. Bạn không cần phải cấu hình thêm gì cả, chỉ cần cài đặt và sử dụng.
 ta có thể sử dụng cloud-init bằng cách sử dụng dòng lệnh hoặc dùng đồ họa
 - Khi thao tác với dòng lệnh, bạn thêm tùy chon --user-data /path/to/filename vào sau lệnh nova-boot
 - Khi sử dụng dashboard bạn cần thực hiện như sau:
