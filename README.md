@@ -87,7 +87,7 @@ Sau khi bạn hoàn thành module của riêng bạn, bạn chỉ cần đặt f
 . Sau khi hoàn tất điều này, ban cần sửa file /etc/cloud/cloud.cfg và add thêm tên module bạn viết vào danh sách. Ví dụ như tôi muốn thêm
 một module mới gọi là mymodule. Chúng ta có thể viết các tập tin cc_mymodule.py trực tiếp trong thư mục module ( trong instance chẳng hạn ) hoặc viết nó ở một nơi khác và sao chép nó vào trong thư mục module trong instance.
 Sau đó, chúng ta cần phải chỉnh sửa file "cloud.cfg" và thêm module của chúng ta vào. Và thêm dưới phần "cloud_config_modules" như sau:
-``
+```
 cloud_config_modules:
  - mounts
  - ssh-import-id
