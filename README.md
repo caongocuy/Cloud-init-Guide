@@ -71,7 +71,9 @@ runcmd:
 - [ echo, "Hello World. I am being run by CloudInit!" ]
  ```
 - lưu lại vào trong một tập tin, tôi gọi nó là myfile. Bây giờ nếu bạn boot một instance, chẳng hạn như:
+```
 nova boot --image IMAGE-ID --flavor m1.small --key_name YOUR-KEY --meta cern-services=false --user_data myfile INSTANCE-NAME
+```
 - Khi instance ACTIVE bạn có thể ssh vào nó và nếu bạn mở tập tin /var/log/boot.log bạn sẽ thấy
 ```
 Starting cloud-init-cfg: Hello World. I am being run by CloudInit!
@@ -187,7 +189,7 @@ runcmd:
  - mysql -e "drop database test; drop user 'test'@'localhost'; flush privileges;"
  - mysqladmin -u root password '123456'
  ```
- ###### 3.7. Sử dụng Cloud-init trong OpenStack
+###### 3.7. Sử dụng Cloud-init trong OpenStack
 Sử dụng cloud-init trong các instance của OpenStack trước hết các image đã phải cài đặt sẵn cloud-init. Bạn không cần phải cấu hình thêm gì cả, chỉ cần cài đặt và sử dụng.
 ta có thể sử dụng cloud-init bằng cách sử dụng dòng lệnh hoặc dùng đồ họa
 - Khi thao tác với dòng lệnh, bạn thêm tùy chon --user-data /path/to/filename vào sau lệnh nova-boot
