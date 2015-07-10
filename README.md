@@ -7,7 +7,7 @@ khởi động dịch vụ hoặc quản lí các VM. Khi tạo instances trong 
 để hỗ trợ việc cấu hình tự động cho các instances tại thời điểm khởi động: user-data và cloud-init.
 
 #### 2. User data
-- là cơ chế mà theo đó người dùng có thể chuyển thông tin chứa trong một tập tin đặt trên local vào trong một instance trong thời gian boot.
+- Là cơ chế mà theo đó người dùng có thể chuyển thông tin chứa trong một tập tin đặt trên local vào trong một instance trong thời gian boot.
 Trường hợp điển hình chuyển thông tin bằng cách dùng 1 file shell scrip hoặc một file cấu hình user data.
 
 - user data được gửi bằng cách sử dụng tùy chọn *--user-data /path/to/filename* khi gọi lệnh *nova-boot*. Ví dụ như
@@ -60,6 +60,7 @@ manage_etc_hosts: true
 - create users and/or set user passwords
 - run custom scripts and/or commands
 ....
+
 ###### 3.3. Cloud-init hoạt động như thế nào
 - cloud-config rất dễ sử dụng trong việc cấu hình các dịch vụ và ban hành lệnh thông qua các tập tin trong user-data. ví dụ ta tạo một file user-data với nội dung sau đây:
 ```
