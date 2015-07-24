@@ -199,8 +199,11 @@ ta có thể sử dụng cloud-init bằng cách sử dụng dòng lệnh hoặc
 
 ###### Link tham khảo
 [Link Ubuntu](https://help.ubuntu.com/community/CloudInit)
+
 [Link trang chủ](https://cloudinit.readthedocs.org/en/latest/)
-[Link Rackspace](https://developer.rackspace.com/blog/using-cloud-init-with-rackspace-cloud/) 
+
+[Link Rackspace](https://developer.rackspace.com/blog/using-cloud-init-with-rackspace-cloud/)
+
 [Link Launchpad](http://bazaar.launchpad.net/~cloud-init-dev/cloud-init/trunk/files/head:/doc/examples/)
 
 Chúc các bạn thành công.
