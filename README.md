@@ -78,7 +78,7 @@ nova boot --image IMAGE-ID --flavor m1.small --key_name YOUR-KEY --meta cern-ser
 ```
 Starting cloud-init-cfg: Hello World. I am being run by CloudInit!
 ```
-- Trong khi boot cloud-init sẽ lấy user-data từ metadata server và xem bên trong có gì và thực thi. Dòng đầu tiên của tập tin này cho biết định dạng đầu vào. Cú pháp này
+- Trong khi boot cloud-init sẽ lấy thông tin từ user-data và xem bên trong có gì và thực thi. Dòng đầu tiên của tập tin này cho biết định dạng đầu vào. Cú pháp này
 được xây dựng thông qua các mô-đun ( viết bằng python ), chúng có thể được tìm thấy trong /usr/lib/python-'version'/dist-packages/cloudinit/CloudConfig/.
 Cloud-init biết mô-đun nào có thể được xử lí thông qua file /etc/cloud/cloud.cfg - list tất cả các module python. 
 Bạn chỉ cần gọi đúng tên module trong file user-data và nắm được tác dụng từng module, như vậy bạn đã sử dụng được cloud-init
@@ -200,6 +200,7 @@ ta có thể sử dụng cloud-init bằng cách sử dụng dòng lệnh hoặc
 ###### Link tham khảo
 https://help.ubuntu.com/community/CloudInit
 https://cloudinit.readthedocs.org/en/latest/
-https://developer.rackspace.com/blog/using-cloud-init-with-rackspace-cloud/
+https://developer.rackspace.com/blog/using-cloud-init-with-rackspace-cloud/ 
+http://bazaar.launchpad.net/~cloud-init-dev/cloud-init/trunk/files/head:/doc/examples/
 
 Chúc các bạn thành công.
