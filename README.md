@@ -198,9 +198,9 @@ ta có thể sử dụng cloud-init bằng cách sử dụng dòng lệnh hoặc
     + thực hiện các bước tạo instance như bình thường, sau bước chọn card mạng bạn click vào tab Post-Creation rồi copy file cloud-config vào rồi click tạo là xong.
 
 ###### Link tham khảo
-https://help.ubuntu.com/community/CloudInit
-https://cloudinit.readthedocs.org/en/latest/
-https://developer.rackspace.com/blog/using-cloud-init-with-rackspace-cloud/ 
-http://bazaar.launchpad.net/~cloud-init-dev/cloud-init/trunk/files/head:/doc/examples/
+[Link Ubuntu](https://help.ubuntu.com/community/CloudInit)
+[Link trang chủ](https://cloudinit.readthedocs.org/en/latest/)
+[Link Rackspace](https://developer.rackspace.com/blog/using-cloud-init-with-rackspace-cloud/) 
+[Link Launchpad](http://bazaar.launchpad.net/~cloud-init-dev/cloud-init/trunk/files/head:/doc/examples/)
 
 Chúc các bạn thành công.
