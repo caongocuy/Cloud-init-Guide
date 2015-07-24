@@ -3,7 +3,7 @@
 
 #### 1. Giới Thiệu
   Người dùng thường muốn thực hiện một số cấu hình cho VM của họ sau khi nó khởi động. Ví dụ như, cài đặt một số gói, 
-khởi động dịch vụ hoặc quản lí các VM. Khi tạo instances trong 1 hệ thống OpenStack cloud, có hai thuật ngữ làm việc với nhau
+khởi động dịch vụ hoặc quản lí các VM. Khi tạo instances trong 1 hệ thống OpenStack cloud, có hai kỹ thuật làm việc với nhau
 để hỗ trợ việc cấu hình tự động cho các instances tại thời điểm khởi động: user-data và cloud-init.
 
 #### 2. User data
@@ -15,7 +15,7 @@ Trường hợp điển hình chuyển thông tin bằng cách dùng 1 file shel
 $ echo "This is some text" > myfile.txt
 $ nova boot --user-data ./myfile.txt --image myimage myinstance
 ```
-- Các instances có thể lấy user-data bằng cách truy vấn meta-data server thông qua OpenStack meta-data API hoặc các API tương thích EC2.
+- Các instances có thể lấy user-data bằng cách truy vấn meta-data service thông qua OpenStack meta-data API hoặc các API tương thích EC2.
 
 - Trong ví dụ trên sử dụng file text, user-data có thể được định dạng nhiều định dạng khác.
 
@@ -26,10 +26,10 @@ Gói phần mềm Cloud-init được thiết kế thực thi điều này. đ�
 - Lưu ý rằng cloud-init không phải là một công nghệ của OpenStack, mà nó là một gói phần mềm được thiết kế để hỗ trợ nhiều cloud providers, để các VM image có thể được sử 
 dụng trong các cloud khác nhau mà không cần sửa đổi. Cloud-init là một dự án mã nguồn mở và source code có sẵn trên Launchpad.( http://launchpad.net/cloud-init )
 
-- Tôi khuyên bạn nên cài đặt cloud-init trên các images mà bạn tạo ra để đơn giản hóa các thao tác cấu hình khi instances được boot lên. Thậm chí nếu bạn không muốn sủ dụng user-data để cấu hình hoạt động của instances trong khi boot, cloud-init cung cấp
+- Việc cài đặt cloud-init trên các images mà bạn tạo ra là rất cần thiết để đơn giản hóa các thao tác cấu hình khi instances được boot lên. Thậm chí nếu bạn không muốn sủ dụng user-data để cấu hình hoạt động của instances trong khi boot, cloud-init cung cấp
 chức năng hữu ích như việc sao chép public key cho một tài khoản.
 
-- Nếu bạn không cài đặt cloud-init, ban sẽ cần phải tự cấu hình image của bạn để lấy public key từ server meta-data khi khởi động và sau đó copy nó vào tài khoản thích hợp.
+- Nếu bạn không cài đặt cloud-init, ban sẽ cần phải tự cấu hình image của bạn để lấy public key từ service meta-data khi khởi động và sau đó copy nó vào tài khoản thích hợp.
 
 ###### 3.1. Cloud-init hỗ trợ các loại định dạng
 cloud-init hỗ trợ các định dạng đầu vào khác nhau cho user-data. Tôi đưa ra 2 định dạng phổ biến nhất
@@ -70,7 +70,7 @@ manage_etc_hosts: true
 runcmd:
 - [ echo, "Hello World. I am being run by CloudInit!" ]
  ```
-- lưu lại vào trong một tập tin, tôi gọi nó là myfile. Bây giờ nếu bạn boot một instance, chẳng hạn như:
+- lưu lại và tôi gọi nó là myfile. Bây giờ nếu bạn boot một instance, chẳng hạn như:
 ```
 nova boot --image IMAGE-ID --flavor m1.small --key_name YOUR-KEY --meta cern-services=false --user_data myfile INSTANCE-NAME
 ```
@@ -196,5 +196,10 @@ ta có thể sử dụng cloud-init bằng cách sử dụng dòng lệnh hoặc
 - Khi sử dụng dashboard bạn cần thực hiện như sau:
     + chuẩn bị sẵn file cloud-config
     + thực hiện các bước tạo instance như bình thường, sau bước chọn card mạng bạn click vào tab Post-Creation rồi copy file cloud-config vào rồi click tạo là xong.
-    
+
+###### Link tham khảo
+https://help.ubuntu.com/community/CloudInit
+https://cloudinit.readthedocs.org/en/latest/
+https://developer.rackspace.com/blog/using-cloud-init-with-rackspace-cloud/
+
 Chúc các bạn thành công.
